@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Risk Level</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef3f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 320px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    input[type="text"] {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 15px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #357ab8;
+    }
+
+    .trust-box {
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #f2f2f2;
+    }
+
+    .low {
+      background-color: #ffb3b3;
+    }
+
+    .moderate {
+      background-color: #ffd966;
+    }
+
+    .high {
+      background-color: #b3ffb3;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 16px;
+      background-color: #95a5a6;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 350px;
+    margin: 80px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 12px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1f6fb2;
+}
+
+.risk-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.low {
+    background: #d4edda;
+    color: #155724;
+}
+
+.medium {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.high {
+    background: #f8d7da;
+    color: #721c24;
+}
+</style>
+</head>
+<body>
+  <div class="card">
+    <h2>📊 Check Risk Level</h2>
+    <form method="POST" action="/risk">
+      <input type="text" name="number" placeholder="Enter number" required>
+      <br>
+      <button type="submit">Check Risk</button>
+    </form>
+
+    {% if trust_level %}
+      <div class="trust-box {% if trust_level.lower() == 'low' %}low{% elif trust_level.lower() == 'moderate' %}moderate{% elif trust_level.lower() == 'high' %}high{% endif %}">
+        <p><strong>Trust Level: {{ trust_level }}</strong></p>
+      </div>
+    {% endif %}
+    {% if risk_level %}
+<div class="risk-box 
+    {% if risk_level == 'Low' %}low
+    {% elif risk_level == 'Medium' %}medium
+    {% else %}high{% endif %}">
+    
+    Risk Level: {{ risk_level }} <br>
+    Spam Reports: {{ report_count }}
+</div>
+{% endif %}
+
+
+
+    <a href="/search" class="back-btn">← Back</a>
+  </div>
+</body>
+</html>

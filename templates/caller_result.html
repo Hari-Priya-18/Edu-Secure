@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Caller Check Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            display: inline-block;
+            width: 90%;
+            max-width: 400px;
+        }
+        .trust-high { color: green; }
+        .trust-medium { color: orange; }
+        .trust-low { color: red; }
+        .back-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Organization: {{ organization }}</h2>
+        <p>Trust Level: 
+            <span class="trust-{{ trust_level|lower }}">{{ trust_level }}</span>
+        </p>
+        <a href="/" class="back-btn">← Back</a>
+    </div>
+</body>
+</html>

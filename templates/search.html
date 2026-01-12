@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Caller Check</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef3f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      position: relative;
+      background: #fff;
+      padding: 40px 40px 30px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 300px;
+      margin: auto;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      text-decoration: none;
+    }
+
+    .arrow {
+      font-size: 20px;
+      color: #333;
+      font-weight: bold;
+      background-color: #e0e0e0;
+      padding: 5px 10px;
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+
+    input[type="text"] {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .btn {
+      background-color: #dbe9ff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 12px;
+      cursor: pointer;
+      text-decoration: none;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <a href="javascript:history.back()" class="back-btn">
+      <span class="arrow">&#8592;</span>
+    </a>
+
+    <!-- Action points to Flask backend -->
+    <form method="POST" action="/check_caller">
+      <input type="text" name="number" placeholder="Enter number" required>
+      <input type="text" name="org" placeholder="Enter org" required>
+
+      <div class="btn-group">
+        <button type="submit" class="btn">✓ Check Caller</button>
+        <a href="/risk" class="btn">📉 Risk Level</a>
+
+      </div>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caller Not Found</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f8fb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 320px;
+    }
+    h2 {
+      color: #e74c3c;
+    }
+    p {
+      color: #333;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 18px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+    .btn:hover {
+      background-color: #217dbb;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>⚠️ Caller Not Verified</h2>
+    <p>No such number <strong>{{ number }}</strong> found in organization <strong>{{ org }}</strong>.</p>
+    <p>Would you like to report this as spam?</p>
+    <a href="/report_spam?number={{ number }}&org={{ org }}" class="btn">Report Spam</a><br>
+    <a href="/search" class="btn" style="background-color:#95a5a6;">← Back</a>
+  </div>
+
+
+</body>
+</html>
