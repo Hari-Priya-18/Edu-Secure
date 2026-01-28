@@ -50,7 +50,7 @@ Tools: VS Code, GitHub
 
 Clone the repository
 
-git clone https://github.com/your-username/EduSecure.git
+git clone https://github.com/Hari-Priya-18/EduSecure.git
 
 
 Navigate to the project directory
