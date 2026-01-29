@@ -1,4 +1,5 @@
 🔐 EduSecure – Caller Verification & Scam Reporting System
+
 📌 Project Overview
 
 EduSecure is a web-based application designed to help users verify callers claiming to represent educational organizations and report potential scam calls.
@@ -87,6 +88,18 @@ Deployment to cloud platform
 ⭐ Conclusion
 
 EduSecure is an intermediate-level, real-world application project that demonstrates backend logic, database usage, and practical user interaction.
+
+ ⚠️ Important Note
+This is a Flask-based backend application.
+
+The project **cannot be run directly from GitHub Pages**.
+To use the application, you must:
+- Clone the repository
+- Install dependencies
+- Run `python app.py` locally
+
+GitHub only hosts the source code, not the running server.
+
 
 👤 Author
 
